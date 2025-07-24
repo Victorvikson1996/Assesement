@@ -99,15 +99,6 @@ export const LoginScreen = ({ navigation }: LoginProps) => {
             text={loading ? 'Loading...' : 'Login'}
             onPress={handleSubmit(onSubmit)}
           />
-          <TouchableOpacity
-            style={{ alignItems: 'center', marginTop: 20 }}
-            onPress={() => navigation.navigate('ProfileScreen')}
-          >
-            <Text>
-              Forgotten your?{' '}
-              <Text style={{ fontWeight: '700' }}>Reset Password</Text>
-            </Text>
-          </TouchableOpacity>
         </View>
       </ScrollView>
     </SafeAreaView>

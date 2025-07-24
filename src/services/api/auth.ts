@@ -147,7 +147,7 @@ export async function getFavoritePsychics() {
       console.error('Failed to load psychics:', data);
       throw new Error('Failed to load psychics');
     }
-    // Return all favorites, online or offline
+
     return psychicsArray
       .filter((p: any) => p.isUserFavorite)
       .map((p: any) => ({
@@ -161,43 +161,6 @@ export async function getFavoritePsychics() {
     throw error;
   }
 }
-// export async function getFavoritePsychics() {
-//   const token = await getToken();
-//   if (!token) {
-//     console.error('No authorization token found for getFavoritePsychics.');
-//     throw new Error('Not authenticated.');
-//   }
-//   try {
-//     const res = await fetch(PSYCHICS_URL, {
-//       method: 'GET',
-//       headers: {
-//         ...defaultHeaders,
-//         Authorization: `Bearer ${token}`
-//       }
-//     });
-//     const data = await res.json();
-//     console.log('Psychics API response:', data);
-
-//     // Use the correct array
-//     const psychicsArray = Array.isArray(data.psychics) ? data.psychics : [];
-//     if (!res.ok) {
-//       console.error('Failed to load psychics:', data);
-//       throw new Error('Failed to load psychics');
-//     }
-//     // Filter only favorites
-//     return psychicsArray
-//       .filter((p: any) => p.isUserFavorite)
-//       .map((p: any) => ({
-//         id: p.id,
-//         avatar: p.pictureUrl,
-//         firstname: p.nickname,
-//         online: p.isConnected
-//       }));
-//   } catch (error) {
-//     console.error('Network or getFavoritePsychics request error:', error);
-//     throw error;
-//   }
-// }
 
 export async function _getFavoritePsychics() {
   const token = await getToken();

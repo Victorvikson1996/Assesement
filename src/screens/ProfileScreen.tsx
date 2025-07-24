@@ -20,7 +20,7 @@ import Tag from '../assest/svg/tag.svg';
 import LogOut from '../assest/svg/log-out.svg';
 
 interface ProfileScreenProps {
-  navigation: any; // Replace with correct navigation type if available
+  navigation: any;
 }
 
 export const ProfileScreen: React.FC<ProfileScreenProps> = ({ navigation }) => {
