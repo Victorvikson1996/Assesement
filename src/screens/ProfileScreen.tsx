@@ -28,6 +28,11 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({ navigation }) => {
   const [favorites, setFavorites] = useState<Psychic[]>([]);
   const [loading, setLoading] = useState(true);
 
+  const disconect = async () => {
+    await logout();
+    navigation.navigate('LoginScreen');
+  };
+
   useEffect(() => {
     (async () => {
       try {
@@ -96,7 +101,7 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({ navigation }) => {
         <DeconnectMenuItem
           icon={LogOut}
           label='Me déconnecter'
-          onPress={logout}
+          onPress={disconect}
         />
       </ScrollView>
       <BottomNav navigation={navigation} />
